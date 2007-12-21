@@ -13,6 +13,7 @@ URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/Class/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildRequires:	perl-UNIVERSAL-exports
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is intended to provide a general-purpose date and datetime
