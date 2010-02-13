@@ -1,19 +1,20 @@
-%define module	Class-Date
-%define name	perl-%{module}
-%define version 1.1.9
-%define release %mkrel 5
+%define upstream_name	 Class-Date
+%define upstream_version 1.1.9
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 6
+
 Summary:	Class for easy date and time manipulation
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/Class/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl(UNIVERSAL::exports)
 BuildRequires:	perl-devel
-BuildRequires:	perl-UNIVERSAL-exports
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is intended to provide a general-purpose date and datetime
@@ -23,16 +24,15 @@ datetime, and have a Class::Date::Rel class for relative dates.
 You can use "+", "-", "<" and ">" operators as with native perl data
 types.
 
-
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -47,5 +47,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/Class
 %{perl_vendorarch}/auto/Class
 %{_mandir}/*/*
-
-
