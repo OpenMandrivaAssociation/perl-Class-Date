@@ -9,7 +9,7 @@ Summary:	Class for easy date and time manipulation
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl(UNIVERSAL::exports)
