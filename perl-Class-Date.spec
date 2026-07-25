@@ -1,16 +1,16 @@
 %define upstream_name	 Class-Date
-%define upstream_version 1.1.15
+%define upstream_version 1.1.17
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	3
+Version:    %{upstream_version}
+Release:	1
 
 Summary:	Class for easy date and time manipulation
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{version}.tar.gz
+Url:		https://github.com/yanick/perl-class-date
+Source0:	https://cpan.metacpan.org/authors/id/Y/YA/YANICK/Class-Date-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl(UNIVERSAL::exports)
