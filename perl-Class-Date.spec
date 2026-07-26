@@ -1,9 +1,7 @@
 %define upstream_name	 Class-Date
-%define upstream_version 1.1.17
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	1
+Version:    1.1.17
+Release:	2
 
 Summary:	Class for easy date and time manipulation
 
@@ -26,7 +24,7 @@ You can use "+", "-", "<" and ">" operators as with native perl data
 types.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
